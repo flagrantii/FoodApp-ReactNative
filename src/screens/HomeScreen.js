@@ -4,12 +4,14 @@ import { StyleSheet, Text, View,ScrollView,Image, TextInput } from 'react-native
 import { widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen'
 import { BellIcon, MagnifyingGlassIcon } from 'react-native-heroicons/outline'
 import Category from '../components/category';
+import Recipes from '../components/recipes';
 
 
 
 export default function HomeScreen() {
 
-  const [avtiveCategory, setActiveCategory] = useState('Beef');
+  const [activeCategory, setActiveCategory] = useState("Beef");
+
   return (
     <View className="flex-1 bg-white">
       <StatusBar style="dark" />
@@ -47,7 +49,11 @@ export default function HomeScreen() {
         </View>
         
         <View>
-          <Category avtiveCategory={avtiveCategory} setActiveCategory={setActiveCategory} />
+          <Category activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+        </View>
+
+        <View>
+          <Recipes/>
         </View>
 
       </ScrollView>
